@@ -1,16 +1,36 @@
+using System;
 using UnityEngine;
 
 namespace Scenes.InventoryDemo
 {
+    /**
+     * Loads and saves inventory data.
+     */
     public class InventoryManager : MonoBehaviour
     {
-        public Canvas menu;
-        private bool isOpen = false;
+        public Inventory inventory;
+        private ItemSlot[] slots;
 
-        public void ToggleMenu()
+        private void Start()
         {
-            isOpen = !isOpen;
-            menu.gameObject.SetActive(isOpen);
+            slots = gameObject.GetComponentsInChildren<ItemSlot>();
+            inventory.LoadPlayerInventory();
+        }
+
+        private void Update()
+        {
+            if (slots.Length > 0)
+            {
+                AddItemsToSlots();
+            }
+        }
+
+        private void AddItemsToSlots()
+        {
+            for (int i = 0; i < inventory.items.Count; i++)
+            {
+                slots[i].item = inventory.items[i];
+            }
         }
     }
 }
