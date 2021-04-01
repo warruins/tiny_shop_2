@@ -24,7 +24,6 @@ public class Quest : MonoBehaviour
     public Image buttonImage;
     public Text buttonText;
     public Sprite buttonAlt;
-    public bool delivered;
     
     private void Start()
     {
@@ -55,15 +54,17 @@ public class Quest : MonoBehaviour
 
     public void Deliver()
     {
+        // FIXME: Just to test things out...
+        quest.complete = completed;
         if (IsAccepted() && IsComplete())
         {
-            delivered = true;
+            quest.delivered = true;
+            Debug.Log("Deliver clicked.");
             // TODO: add reward to player inventory
             // TODO: remove quest from quest log
         }
     }
 
     public bool IsAccepted() => quest.accepted;
-    public bool IsComplete() => completed; //quest.complete;
-    public bool IsDelivered() => delivered;
+    public bool IsComplete() => quest.complete; //quest.complete;
 }

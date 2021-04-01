@@ -21,6 +21,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: a84b45d9eed045340b7f421903022f7c, type: 3}
   reward: 200
   rewardIcon: {fileID: 21300000, guid: 97bae8163125a4811a8a9c09ad34e514, type: 3}
-  objective: 
+  objective: Mindful Elixir
   complete: 0
   accepted: 0
+  delivered: 0
