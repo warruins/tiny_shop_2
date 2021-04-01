@@ -738,6 +738,14 @@ PrefabInstance:
       propertyPath: itemDescription
       value: Common yellow flower of Summer.
       objectReference: {fileID: 0}
+    - target: {fileID: 446314221723791078, guid: be1024f88bc44cd49bbccc2b6c2d8540, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 446314221723791081, guid: be1024f88bc44cd49bbccc2b6c2d8540, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 495.2295
+      objectReference: {fileID: 0}
     - target: {fileID: 446314223532750590, guid: be1024f88bc44cd49bbccc2b6c2d8540, type: 3}
       propertyPath: m_Name
       value: Canvas.ItemBox.1
@@ -1655,6 +1663,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1257551810}
     m_Modifications:
+    - target: {fileID: 446314221723791080, guid: be1024f88bc44cd49bbccc2b6c2d8540, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 446314223532750590, guid: be1024f88bc44cd49bbccc2b6c2d8540, type: 3}
       propertyPath: m_Name
       value: Canvas.ItemBox
