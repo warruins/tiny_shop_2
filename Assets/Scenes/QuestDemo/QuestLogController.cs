@@ -7,5 +7,6 @@ namespace Scenes.QuestDemo
         [Header("Quest")] 
         public Sprite deliverButton;
 
+        public Quest[] quests;
     }
 }

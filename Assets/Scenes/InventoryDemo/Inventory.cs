@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Scenes.InventoryDemo.Extras;
 using UnityEngine;
 
 namespace Scenes.InventoryDemo

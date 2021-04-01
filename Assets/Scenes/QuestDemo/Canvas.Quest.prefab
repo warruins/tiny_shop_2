@@ -428,7 +428,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4058693139157613118}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6811448239899314945}
+        m_TargetAssemblyTypeName: Quest, Assembly-CSharp
+        m_MethodName: Accept
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6811448239899314945}
+        m_TargetAssemblyTypeName: Quest, Assembly-CSharp
+        m_MethodName: Deliver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3954003840086119373
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,7 +536,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &315309172195893887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,11 +566,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70537837ee206524f9d1d1eccf12fff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quest: {fileID: 0}
   title: {fileID: 307557907055721718}
   summary: {fileID: 1366015619725462292}
   icon: {fileID: 4003973840513986171}
+  completed: 0
   reward: {fileID: 2373450484685675518}
   rewardIcon: {fileID: 371609253468675613}
+  button: {fileID: 576647992418185124}
+  buttonImage: {fileID: 0}
+  buttonText: {fileID: 0}
+  buttonAlt: {fileID: 21300000, guid: cbb338b33765f40d2b04b54d803786bd, type: 3}
+  delivered: 0
 --- !u!1 &5661477196409920819
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.990566, g: 0.83121276, b: 0.5476148, a: 0.392}
+  m_Color: {r: 0.7075472, g: 0.62924284, b: 0.49127805, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

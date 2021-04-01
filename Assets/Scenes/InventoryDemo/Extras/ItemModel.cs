@@ -1,9 +1,9 @@
 using UnityEngine;
 
-namespace Scenes.InventoryDemo
+namespace Scenes.InventoryDemo.Extras
 {
     /**
-     * The data model for game items, only purpose is defining the fields.
+     * The data model for game items, only purpose is sharing the fields.
      */
     [CreateAssetMenu(fileName = "New Item", menuName = "Game Items/New Item")]
     public class ItemModel : ScriptableObject

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff012c673b3f6f044b3247a32e87bc40, type: 3}
+  m_Name: The Missing Ingredient
+  m_EditorClassIdentifier: 
+  title: The Missing Ingredient
+  summary: Figure out which ingrediet is missing.
+  details: This potion is missing a certain special quality. Can you find it?
+  icon: {fileID: 21300000, guid: 8dcd59a733507472f9faf1e8c03b20ae, type: 3}
+  reward: 100
+  rewardIcon: {fileID: 21300000, guid: c98f22335f3e14206b1ebe4669c4f2f6, type: 3}
+  objective: Green Clover

@@ -1,4 +1,5 @@
 using System;
+using Scenes.InventoryDemo.Extras;
 using UnityEngine;
 using UnityEngine.UI;
 
