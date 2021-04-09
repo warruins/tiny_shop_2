@@ -20,7 +20,14 @@ namespace Scenes.InventoryDemo
 
         private void Update()
         {
-            if(item != null) DisplayItem();
+            if (item != null)
+            {
+                DisplayItem();
+            }
+            else
+            {
+                itemView.itemSprite = null;
+            }
         }
 
         public void DisplayItem()

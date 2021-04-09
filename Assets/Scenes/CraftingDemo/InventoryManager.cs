@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using Scenes.InventoryDemo;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Scenes.CraftingDemo
 {
@@ -10,22 +12,42 @@ namespace Scenes.CraftingDemo
     {
         public Inventory inventory;
         public Recipe currentRecipe;
-        private ItemSlot[] slots;
+        public Image progressBar;
+        
+        private List<ItemSlot> slots;
+        private List<ItemSlot> currentSlots;
         private bool readyToCraft;
+        private bool startCrafting;
+        
+        private bool ReadyToCraft() => readyToCraft;
+        private bool CraftingComplete() => progressBar.fillAmount >= 0.990;
 
         private void Start()
         {
-            slots = gameObject.GetComponentsInChildren<ItemSlot>();
+            slots = new List<ItemSlot>(gameObject.GetComponentsInChildren<ItemSlot>());
+            AddItemsToSlots();
         }
 
         private void Update()
         {
-            if (slots.Length > 0)
+            if (slots.Count > 0)
             {
                 AddItemsToSlots();
             }
+
+            if (startCrafting)
+            {
+                FillProgressBar();
+                if (CraftingComplete())
+                {
+                    inventory.items.Add(currentRecipe.recipe);
+                    startCrafting = false;
+                }
+            }
+            UpdateSlots();
         }
 
+        // FIXME: Need a way to manage slots for duplicates and updating
         private void AddItemsToSlots()
         {
             for (int i = 0; i < inventory.items.Count; i++)
@@ -35,7 +57,18 @@ namespace Scenes.CraftingDemo
             CheckIngredients();
         }
 
-        // TODO: Tie to click event on UI controller buttons.
+        private void UpdateSlots()
+        {
+            foreach (var slot in slots)
+            {
+                if (inventory.items.Contains(slot.item))
+                {
+                    continue;
+                }
+                slot.item = null;
+            }
+        }
+
         public void CheckIngredients()
         {
             foreach (var ingredient in currentRecipe.ingredients)
@@ -49,16 +82,30 @@ namespace Scenes.CraftingDemo
             readyToCraft = true;
         }
 
-        public bool ReadyToCraft() => readyToCraft;
-
         public void CraftRecipe()
         {
             if (ReadyToCraft())
             {
-                Debug.Log("Ready to craft!");
-                // Update crafting progress bar.
-                // when bar is full, add item from recipe to inventory
-                // remove item quantities from inventory
+                startCrafting = true;
+                UpdateInventory();
+            }
+            else
+            {
+                progressBar.fillAmount = 0;
+                startCrafting = false;
+            }
+        }
+        
+        private void FillProgressBar()
+        {
+            progressBar.fillAmount += 0.0025f;
+        }
+
+        private void UpdateInventory()
+        { 
+            foreach (var item in currentRecipe.ingredients)
+            {
+                inventory.items.Remove(item);
             }
         }
     }
