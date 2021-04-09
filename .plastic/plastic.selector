@@ -1,0 +1,4 @@
+repository "TinyShop@CMDev@cloud"
+  path "/"
+    smartbranch "/main"  
+     
