@@ -6,6 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MenuDemo/MenuDemo.unity
+    path: Assets/Scenes/Start.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MenuDemo/MenuDemo.unity
+    guid: 1e9adc0de58633e4bbba50428e1a7ab4
+  - enabled: 1
+    path: Assets/Scenes/DragnDrop/DragnDropDemo.unity
+    guid: edd5441cc5036ea4aaf9d4f1f9072dbb
+  - enabled: 1
+    path: Assets/Scenes/ProgressBar/ProgressDemo.unity
+    guid: 15aa57c0cd6577945892e4c72123ecac
+  - enabled: 1
+    path: Assets/Scenes/InventoryDemo/InventoryDemo.unity
+    guid: a758c0e807a5b9944b6020b21203f02b
+  - enabled: 1
+    path: Assets/Scenes/QuestDemo/QuestDemo.unity
+    guid: 89b6d328bdeeb07428fd82c66628f9d0
+  - enabled: 1
+    path: Assets/Scenes/TradeDemo/TradeDemo.unity
+    guid: 6fdfb2aeef9c8a046815323e5ef6ceb9
+  - enabled: 1
+    path: Assets/Scenes/CraftingDemo/Crafting.unity
+    guid: 3985d8da6e387314889515a9c036092e
   m_configObjects: {}

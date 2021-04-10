@@ -6,7 +6,8 @@ namespace Scenes.DragnDrop
 {
     public class DragEventHandler : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
     {
-        public CanvasGroup canvasGroup;
+        public Canvas canvas;
+        private CanvasGroup canvasGroup;
         private RectTransform rect;
 
         private void Awake()
@@ -19,7 +20,7 @@ namespace Scenes.DragnDrop
         public void OnDrag(PointerEventData eventData)
         {
             Debug.Log("Dragging: ", eventData.pointerDrag);
-            rect.anchoredPosition += eventData.delta;
+            rect.anchoredPosition += eventData.delta / canvas.scaleFactor;
         }
 
         public void OnBeginDrag(PointerEventData eventData)
