@@ -61,12 +61,9 @@ namespace Scenes.CraftingDemo
         {
             foreach (var slot in slots)
             {
-                if (inventory.items.Contains(slot.item))
-                {
-                    continue;
-                }
                 slot.item = null;
             }
+            AddItemsToSlots();
         }
 
         public void CheckIngredients()
