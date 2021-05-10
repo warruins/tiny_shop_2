@@ -15,7 +15,6 @@ namespace Scenes.CraftingDemo
         public Image progressBar;
         
         private List<ItemSlot> slots;
-        private List<ItemSlot> currentSlots;
         private bool readyToCraft;
         private bool startCrafting;
         

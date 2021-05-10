@@ -1,18 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ProgressBar : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Image bar;
+    private bool startFill;
+
+    private void Update()
     {
-        
+        if (startFill)
+        {
+            bar.fillAmount += 0.0025f;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Fill()
     {
-        
+        startFill = true;
     }
 }
