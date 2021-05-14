@@ -36,13 +36,12 @@ namespace Scenes.QuestDemo
             }
         }
 
-        public void GetNewQuests()
+        private void GetNewQuests()
         {
             var newQuests = Resources.LoadAll<ScriptableQuest>("Quests");
             foreach (var quest in newQuests)
             {
                 if (quest.complete && quest.delivered) continue;
-                // quests.Add(quest);
                 var questObj = Instantiate(questPrefab, transform);
                 questObj.quest = quest;
                 questList.Add(questObj);

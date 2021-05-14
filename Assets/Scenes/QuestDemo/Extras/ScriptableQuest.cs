@@ -12,7 +12,6 @@ namespace Scenes.QuestDemo.Extras
         public Sprite rewardIcon;
         public string objective;
         public bool complete;
-        public bool accepted;
         public bool delivered;
     }
 }

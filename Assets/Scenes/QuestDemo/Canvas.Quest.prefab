@@ -307,7 +307,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Accept
+  m_Text: Deliver
 --- !u!1 &3122792683793451458
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,7 +431,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6811448239899314945}
         m_TargetAssemblyTypeName: Quest, Assembly-CSharp
-        m_MethodName: Accept
+        m_MethodName: Deliver
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -555,6 +555,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quest: {fileID: 11400000, guid: 88018ef91e5e2b5419c3ea58fe8950ef, type: 2}
+  complete: 0
+  delivered: 0
   title: {fileID: 307557907055721718}
   summary: {fileID: 1366015619725462292}
   icon: {fileID: 4003973840513986171}
