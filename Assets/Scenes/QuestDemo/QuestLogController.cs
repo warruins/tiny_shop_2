@@ -9,16 +9,17 @@ namespace Scenes.QuestDemo
 {
     public class QuestLogController : MonoBehaviour
     {
+        public Quest questPrefab;
         public List<ScriptableQuest> quests;
-        private Quest[] questCanvases;
         private List<ItemModel> inventory;
+        private List<Quest> questList;
 
         private void Start()
         {
-            questCanvases = GetComponentsInChildren<Quest>();
+            // ?: not clear why I have to initialize this but not quests
+            questList = new List<Quest>(); 
             inventory = GetComponentInParent<UIManager>().inventory;
             GetNewQuests();
-            DisplayQuests();
         }
 
         private void Update()
@@ -28,7 +29,7 @@ namespace Scenes.QuestDemo
 
         private void CheckQuestUpdates()
         {
-            foreach (var quest in quests.ToList())
+            foreach (var quest in questList)
             {
                 GetCompletionStatus(quest);
                 if (quest.complete && quest.delivered) RemoveQuest(quest);
@@ -40,35 +41,30 @@ namespace Scenes.QuestDemo
             var newQuests = Resources.LoadAll<ScriptableQuest>("Quests");
             foreach (var quest in newQuests)
             {
-                if (!quest.complete) quests.Add(quest);
+                if (quest.complete && quest.delivered) continue;
+                // quests.Add(quest);
+                var questObj = Instantiate(questPrefab, transform);
+                questObj.quest = quest;
+                questList.Add(questObj);
             }
         }
 
-        private void DisplayQuests()
-        {
-            for (int i = 0; i < questCanvases.Length; i++)
-            {
-                questCanvases[i].quest = quests[i];
-            }
-        }
-
-        private void GetCompletionStatus(ScriptableQuest quest)
+        private void GetCompletionStatus(Quest quest)
         {
             foreach (var item in inventory)
             {
-                // check quest.objective presence in player inventory
-                if (item.itemName == quest.objective)
+                // If quest.objective is in player inventory...
+                if (item.itemName == quest.quest.objective)
                 {
-                    // mark quest.complete if found
-                    quest.complete = true;
+                    // ...then quest.complete
+                    quest.quest.complete = true;
                 }
             }
         }
 
-        public void RemoveQuest(ScriptableQuest quest)
+        public void RemoveQuest(Quest quest)
         {
-            // TODO: Remove the quest canvas so it doesnt display on the log.
-            quests.Remove(quest);
+            questList.Remove(quest);
         }
     }
 }

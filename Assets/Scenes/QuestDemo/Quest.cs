@@ -9,6 +9,8 @@ public class Quest : MonoBehaviour
 {
     [Header("Quest Details")] 
     public ScriptableQuest quest;
+    public bool complete;
+    public bool delivered;
     [SerializeField] private Text title;
     [SerializeField] private Text summary;
     [SerializeField] private Image icon;
@@ -32,6 +34,8 @@ public class Quest : MonoBehaviour
         icon.sprite = quest.icon;
         reward.text = quest.reward;
         rewardIcon.sprite = quest.rewardIcon;
+        complete = quest.complete;
+        delivered = quest.delivered;
         buttonImage = button.GetComponent<Image>();
         buttonText = button.GetComponentInChildren<Text>();
     }
@@ -66,5 +70,5 @@ public class Quest : MonoBehaviour
     }
 
     public bool IsAccepted() => quest.accepted;
-    public bool IsComplete() => quest.complete; //quest.complete;
+    public bool IsComplete() => quest.complete; 
 }
