@@ -693,7 +693,6 @@ GameObject:
   - component: {fileID: 1257551808}
   - component: {fileID: 1257551807}
   - component: {fileID: 1257551811}
-  - component: {fileID: 1257551812}
   m_Layer: 5
   m_Name: Canvas.UI
   m_TagString: Untagged
@@ -799,19 +798,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 1053434988}
---- !u!114 &1257551812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1257551806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d89d330fdfcaee84dbe729a1ccded6c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menu: {fileID: 0}
 --- !u!1 &1400189793
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,19 +1261,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3982193779024143070, guid: f27ce364f4927204892a6fd914f52949, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3982193779024143070, guid: f27ce364f4927204892a6fd914f52949, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1257551812}
+      objectReference: {fileID: 5744779634632602929, guid: f27ce364f4927204892a6fd914f52949, type: 3}
     - target: {fileID: 3982193779024143070, guid: f27ce364f4927204892a6fd914f52949, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GetScene
       objectReference: {fileID: 0}
     - target: {fileID: 3982193779024143070, guid: f27ce364f4927204892a6fd914f52949, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Scenes.TinyUIController, Assembly-CSharp
+      value: Scenes.SceneSwap, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5393675448086050998, guid: f27ce364f4927204892a6fd914f52949, type: 3}
       propertyPath: m_Name

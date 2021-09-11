@@ -20,7 +20,7 @@ namespace Scenes.InventoryDemo
 
         private void Update()
         {
-            if (item != null)
+            if (item)
             {
                 DisplayItem();
             }
